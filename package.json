@@ -1,14 +1,14 @@
 {
   "name": "locusline",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
+  "packageManager": "npm@10.2.3",
   "dependencies": {
     "leaflet": "^1.9.4",
     "next": "^14.0.4",

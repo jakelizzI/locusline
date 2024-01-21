@@ -1,36 +1,28 @@
 "use client"
 
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker } from 'react-leaflet'
 import "leaflet/dist/leaflet.css"
 import "./map.css"
-import { LatLngExpression } from 'leaflet';
-import L from "leaflet";
-import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
-import markerIcon from "leaflet/dist/images/marker-icon.png";
-import markerShadow from "leaflet/dist/images/marker-shadow.png";
-
-L.Icon.Default.mergeOptions({
-  iconUrl: markerIcon.src,
-  iconRetinaUrl: markerIcon2x.src,
-  shadowUrl: markerShadow.src,
-});
-
+import L from "leaflet"
+import carIcon from "../../../public/topview_car_wagon.png";
 
 function Map() {
 
-  const center: LatLngExpression = [35.68131, 139.76716];
+  const center: L.LatLngExpression = [35.68131, 139.76716];
+
+  const ic = L.icon({
+    iconUrl: carIcon.src,
+    iconSize: [56.7, 80],
+    iconAnchor: [28, 40]
+  })
   
   return (
-    <MapContainer className='map-container' center={center} zoom={13} scrollWheelZoom={false}>
+    <MapContainer className='map-container' center={center} zoom={15} scrollWheelZoom={true}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={center}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
-      </Marker>
+      <Marker position={center} icon={ic} />
     </MapContainer>
   )
 }

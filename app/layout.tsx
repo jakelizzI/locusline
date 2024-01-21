@@ -5,7 +5,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className="body-style">{children}</body>
+      <body style={
+        {
+          margin: "0px"
+        }
+      }>{children}</body>
     </html>
   )
 }

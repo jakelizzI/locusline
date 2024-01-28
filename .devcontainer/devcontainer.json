@@ -1,0 +1,7 @@
+{
+	"image": "mcr.microsoft.com/devcontainers/universal:linux",
+	"features": {
+		"ghcr.io/devcontainers-contrib/features/amplify-cli:2": {},
+		"ghcr.io/devcontainers-contrib/features/typescript:2": {}
+	}
+}
